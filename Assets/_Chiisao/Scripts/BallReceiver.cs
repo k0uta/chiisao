@@ -5,6 +5,14 @@ public class BallReceiver : MonoBehaviour
 {
     private GameObject targetBall = null;
 
+    private Animator animator;
+
+    private void Start()
+    {
+        animator = transform.root.GetComponent<Animator>();
+        animator.SetTrigger("GotBaseballBat");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -24,13 +32,14 @@ public class BallReceiver : MonoBehaviour
     private void BallHit()
     {
         Debug.Log("Hit");
-        throw new NotImplementedException();
+        animator.SetTrigger("BaseballHit");
+        animator.SetBool("Running", true);
     }
 
     private void BallMiss()
     {
         Debug.Log("Miss");
-        throw new NotImplementedException();
+        animator.SetTrigger("BaseballHitMiss");
     }
 
     private bool IsBallInRange()
