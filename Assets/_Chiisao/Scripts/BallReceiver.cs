@@ -34,6 +34,7 @@ public class BallReceiver : MonoBehaviour
         Debug.Log("Hit");
         animator.SetTrigger("BaseballHit");
         animator.SetBool("Running", true);
+        targetBall.GetComponent<Rigidbody>().AddForce(new Vector3(0, 30f, 100f), ForceMode.Impulse);
     }
 
     private void BallMiss()
