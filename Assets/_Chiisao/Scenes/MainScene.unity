@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 108515934}
   - component: {fileID: 108515935}
   - component: {fileID: 108515936}
+  - component: {fileID: 108515937}
   m_Layer: 0
   m_Name: BallReceiver
   m_TagString: Untagged
@@ -177,6 +178,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26660b5b5ff44ed4789b3814e3837876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!320 &108515937
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108515933}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 28f12c69870680b41b43e2288537ebdd, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 3079685586160561665, guid: 28f12c69870680b41b43e2288537ebdd, type: 2}
+    value: {fileID: 1900847591}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &110028538
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,6 +730,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373965997}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &1900847591 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 8c030997f1f8ddb46b002765ddb21f52,
+    type: 3}
+  m_PrefabInstance: {fileID: 2065057786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2065057786
 PrefabInstance:
   m_ObjectHideFlags: 0

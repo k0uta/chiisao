@@ -1,5 +1,7 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Timeline;
+using UnityEngine.Playables;
 
 public class BallReceiver : MonoBehaviour
 {
@@ -32,7 +34,7 @@ public class BallReceiver : MonoBehaviour
     private void BallHit()
     {
         Debug.Log("Hit");
-        animator.SetTrigger("BaseballHit");
+        GetComponent<PlayableDirector>().Play();
         animator.SetBool("Running", true);
         targetBall.GetComponent<Rigidbody>().AddForce(new Vector3(0, 30f, 100f), ForceMode.Impulse);
     }
