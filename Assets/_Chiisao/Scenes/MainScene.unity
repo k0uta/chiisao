@@ -195,6 +195,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 3079685586160561665, guid: 28f12c69870680b41b43e2288537ebdd, type: 2}
     value: {fileID: 1900847591}
+  - key: {fileID: -8627171587137092217, guid: 28f12c69870680b41b43e2288537ebdd, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &110028538
@@ -647,6 +649,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 42.263, y: 0, z: 0}
+--- !u!1 &1196328337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1747736825038084, guid: 271342a706fc64842ae387e3e5d5bcc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 583355333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1196328340
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196328337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: ba347e6f303d54e4f8e5f3f45fd6597c, type: 3}
 --- !u!4 &1333030854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3220319501169496967, guid: 8c030997f1f8ddb46b002765ddb21f52,
@@ -751,7 +773,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 8c030997f1f8ddb46b002765ddb21f52,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8c030997f1f8ddb46b002765ddb21f52,
         type: 3}

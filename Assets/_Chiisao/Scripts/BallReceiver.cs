@@ -9,9 +9,12 @@ public class BallReceiver : MonoBehaviour
 
     private Animator animator;
 
+    private PlayableDirector playableDirector;
+
     private void Start()
     {
         animator = transform.root.GetComponent<Animator>();
+        playableDirector = GetComponent<PlayableDirector>();
         animator.SetTrigger("GotBaseballBat");
     }
 
@@ -34,9 +37,14 @@ public class BallReceiver : MonoBehaviour
     private void BallHit()
     {
         Debug.Log("Hit");
-        GetComponent<PlayableDirector>().Play();
         animator.SetBool("Running", true);
-        targetBall.GetComponent<Rigidbody>().AddForce(new Vector3(0, 30f, 100f), ForceMode.Impulse);
+
+        var timelineAsset = (TimelineAsset)playableDirector.playableAsset;
+        var track = timelineAsset.GetOutputTrack(2);
+
+        playableDirector.SetGenericBinding(track, targetBall);
+
+        playableDirector.Play();
     }
 
     private void BallMiss()
