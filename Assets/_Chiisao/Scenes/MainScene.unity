@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 108515935}
   - component: {fileID: 108515936}
   - component: {fileID: 108515937}
+  - component: {fileID: 108515938}
   m_Layer: 0
   m_Name: BallReceiver
   m_TagString: Untagged
@@ -199,6 +200,37 @@ PlayableDirector:
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &108515938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108515933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 0a07027521f86df4ba138e2bcb5ae5ef, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 108515936}
+          m_MethodName: ReleaseBall
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
 --- !u!1 &110028538
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,26 +681,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 42.263, y: 0, z: 0}
---- !u!1 &1196328337 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1747736825038084, guid: 271342a706fc64842ae387e3e5d5bcc8,
-    type: 3}
-  m_PrefabInstance: {fileID: 583355333}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1196328340
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196328337}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300002, guid: ba347e6f303d54e4f8e5f3f45fd6597c, type: 3}
 --- !u!4 &1333030854 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3220319501169496967, guid: 8c030997f1f8ddb46b002765ddb21f52,

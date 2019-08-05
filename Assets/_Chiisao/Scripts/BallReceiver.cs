@@ -44,7 +44,21 @@ public class BallReceiver : MonoBehaviour
 
         playableDirector.SetGenericBinding(track, targetBall);
 
+        targetBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
+
         playableDirector.Play();
+    }
+
+    public void ReleaseBall()
+    {
+        var timelineAsset = (TimelineAsset)playableDirector.playableAsset;
+        var track = timelineAsset.GetOutputTrack(2);
+
+        var ball = playableDirector.GetGenericBinding(track) as GameObject;
+        playableDirector.SetGenericBinding(track, null);
+        Debug.Log("Relase Ball");
+
+        ball.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 25f, 50f), ForceMode.Impulse);
     }
 
     private void BallMiss()
