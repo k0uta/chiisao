@@ -2,10 +2,13 @@
 using UnityEngine;
 using UnityEngine.Timeline;
 using UnityEngine.Playables;
+using System.Collections;
 
 public class BallReceiver : MonoBehaviour
 {
     private GameObject targetBall = null;
+
+    [SerializeField] private GameObject explosionParticle;
 
     private Animator animator;
 
@@ -51,12 +54,26 @@ public class BallReceiver : MonoBehaviour
 
     public void ReleaseBall()
     {
+        StartCoroutine(TimeScaleCoroutine());
+    }
+
+    IEnumerator TimeScaleCoroutine()
+    {
         var timelineAsset = (TimelineAsset)playableDirector.playableAsset;
         var track = timelineAsset.GetOutputTrack(2);
 
         var ball = playableDirector.GetGenericBinding(track) as GameObject;
         playableDirector.SetGenericBinding(track, null);
         Debug.Log("Relase Ball");
+
+        var explosion = Instantiate(explosionParticle) as GameObject;
+        explosion.transform.position = ball.transform.position;
+
+        Time.timeScale = 0.01f;
+
+        yield return new WaitForSecondsRealtime(1);
+
+        Time.timeScale = 1f;
 
         ball.GetComponent<Rigidbody>().AddForce(new Vector3(0f, 25f, 50f), ForceMode.Impulse);
     }
