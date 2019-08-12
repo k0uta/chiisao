@@ -39,7 +39,7 @@ public class BallReceiver : MonoBehaviour
 
     private void BallHit()
     {
-        Debug.Log("Hit");
+        Debug.Log("Ball Hit");
         animator.SetBool("Running", true);
 
         var timelineAsset = (TimelineAsset)playableDirector.playableAsset;
@@ -64,7 +64,7 @@ public class BallReceiver : MonoBehaviour
 
         var ball = playableDirector.GetGenericBinding(track) as GameObject;
         playableDirector.SetGenericBinding(track, null);
-        Debug.Log("Relase Ball");
+        Debug.Log("Ball Released");
 
         var explosion = Instantiate(explosionParticle) as GameObject;
         explosion.transform.position = ball.transform.position;
@@ -80,7 +80,7 @@ public class BallReceiver : MonoBehaviour
 
     private void BallMiss()
     {
-        Debug.Log("Miss");
+        Debug.Log("Ball Missed");
         animator.SetTrigger("BaseballHitMiss");
     }
 
